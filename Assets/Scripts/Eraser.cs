@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Eraser : DraggableObject
 {
@@ -11,10 +9,10 @@ public class Eraser : DraggableObject
     private MeshRenderer[] colouredParts;
 
     [SerializeField]
-    private Whiteboard_Painter painter;
+    private Painter painter;
 
     [SerializeField]
-    private Whiteboard_PaintReciever paintReceiver;
+    private PaintReceiver paintReceiver;
 
     protected override void Awake()
     {

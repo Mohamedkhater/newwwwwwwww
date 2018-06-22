@@ -4,4 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/JoiningServer.unity
+    guid: 69fd571b4bec42645b847a67e6f9f960
+  - enabled: 1
+    path: Assets/Scenes/Classroom.unity
+    guid: 5bbbfe1390cfb8f4a93962d2245bb89e
+  - enabled: 1
+    path: Assets/Scenes/LAB.unity
+    guid: 8291a9ef3cf129d4ba0ab7371129bc88

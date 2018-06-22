@@ -15,7 +15,6 @@ public class PlayerSetup : NetworkBehaviour {
             {
                 componentsToDisable[i].enabled = false;
             }
-            
         }
         else
         {

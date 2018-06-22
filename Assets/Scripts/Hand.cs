@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Hand : MonoBehaviour {
-
+[RequireComponent(typeof(SteamVR_TrackedController))]
+public class Hand : MonoBehaviour
+{
     [SerializeField]
     private float minDistanceToGrab = 0.2f;
 
@@ -15,7 +14,7 @@ public class Hand : MonoBehaviour {
 
     private void Awake()
     {
-        SteamVR_TrackedController controller = GetComponent<SteamVR_TrackedController>();
+        SteamVR_TrackedController controller = GetComponent< SteamVR_TrackedController>();
 
         controller.TriggerClicked += OnTriggerCliked;
         controller.TriggerUnclicked += OnTriggerUncliked;
@@ -30,7 +29,7 @@ public class Hand : MonoBehaviour {
         float closestDistance = float.MaxValue;
         DraggableObject closestObject = null;
 
-        foreach (DraggableObject draggable in draggables)
+        foreach(DraggableObject draggable in draggables)
         {
             if (!draggable.IsDragged)
             {
@@ -44,7 +43,7 @@ public class Hand : MonoBehaviour {
             }
         }
 
-        if (closestObject != null)
+        if(closestObject != null)
         {
             draggedObject = closestObject;
 
@@ -56,7 +55,7 @@ public class Hand : MonoBehaviour {
 
     private void OnTriggerUncliked(object sender, ClickedEventArgs e)
     {
-        if (draggedObject != null)
+        if(draggedObject != null)
         {
             draggedObject.StopDragging();
 

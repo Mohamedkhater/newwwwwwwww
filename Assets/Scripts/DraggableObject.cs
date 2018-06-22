@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-
 
 [RequireComponent(typeof(Rigidbody))]
 public class DraggableObject : MonoBehaviour
@@ -51,7 +49,7 @@ public class DraggableObject : MonoBehaviour
                 UpdateRotation(controllerTransform.rotation * Quaternion.Euler(Vector3.right * 90f), followingSpeed);
 
                 Vector3 velocity = (mRigidbody.position - lastPosition.Value) / Time.deltaTime;
-
+                
                 velocities.Enqueue(velocity);
                 if (velocities.Count > MaxNumberOfPositions)
                     velocities.Dequeue();
@@ -75,7 +73,7 @@ public class DraggableObject : MonoBehaviour
 
         mRigidbody.position = Vector3.Lerp(mRigidbody.position, targetPosition, Time.deltaTime * followingSpeed);
     }
-
+    
     protected virtual void UpdateRotation(Quaternion targetRotation, float followingSpeed)
     {
         mRigidbody.rotation = Quaternion.Lerp(mRigidbody.rotation, targetRotation, Time.deltaTime * followingSpeed);

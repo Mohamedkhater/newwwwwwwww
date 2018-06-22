@@ -4,17 +4,14 @@ using UnityEngine;
 using Valve.VR;
 
 [RequireComponent(typeof(SteamVR_TrackedObject))]
-
 public class PickUp : MonoBehaviour {
 
     private SteamVR_TrackedObject trackedObject;
     private SteamVR_Controller.Device device;
 
     private Vector2 touchpad;
-
     private GameObject player;
-
-
+    
     private float sensitivityX = 1.5F;
     private Vector3 playerPos;
 
@@ -52,7 +49,6 @@ public class PickUp : MonoBehaviour {
             col.attachedRigidbody.useGravity = true;
 
             TossObject(col.attachedRigidbody);
-
         }
 
     }
